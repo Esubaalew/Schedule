@@ -1,0 +1,9 @@
+.plain-btn {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.clickable {
+  cursor: pointer;
+}

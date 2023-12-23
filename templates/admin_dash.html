@@ -1,0 +1,32 @@
+{% extends "layout.html" %} {% block title %} Admin Dashboard {% endblock %} {%
+block content %}
+
+<div class="container mt-4">
+  <h1>Admin Dashboard</h1>
+
+  <!-- Navigation Menu -->
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('list_teachers') }}"
+        >List of Teachers</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('list_sections') }}"
+        >List of Sections</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('list_courses') }}"
+        >List of Courses</a
+      >
+    </li>
+  </ul>
+
+  <!-- Content for the admin dashboard -->
+  <div class="mt-4">
+    <!-- Add content specific to the admin dashboard here -->
+  </div>
+</div>
+
+{% endblock %}

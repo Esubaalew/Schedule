@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+    background-image: url("s.bmp");
+    background-size: cover;
+    background-position: center;
+    color: wheat;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Set a minimum height of the body to cover the viewport */
+    overflow-y: auto; /* Allow vertical scrolling when the content overflows */
+}
+
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .outer-card {
+            background: lightgray; /* Set background color to white */
+            color: #000; /* Set text color to black */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px; /* Added rounded corners */
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+       .inner-card {
+    background: lightgray; /* Set background color to light gray */
+    color: #000; /* Set text color to black */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Added rounded corners */
+    margin-top: 20px;
+}
+
+
+  .footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0; /* Adjusted padding */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+    </style>
+
+    <title>AAU SISI Scheduler</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="outer-card">
+                    <div class="card-body">
+                        <h2 class="card-title">Welcome to AAU SISI Scheduler</h2>
+                        <p class="card-text">
+                            Effortlessly manage your schedule with AAU SISI Scheduler.
+                            Explore the amazing features and benefits below.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="inner-card">
+                    <div class="card-body">
+                        <h4>Major Features</h4>
+                        <ul>
+                            <li>Assign class and final exam schedules.</li>
+                            <li>View class and final exam schedules.</li>
+                            <li>Manage classroom availability.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="outer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">For Students</h5>
+                        <p class="card-text">
+                            Login to view and manage your class and final exam schedules.
+                        </p>
+                        <a href="{{ url_for('student_login') }}" class="btn btn-primary"
+                            >Login as Student</a
+                        >
+                    </div>
+                </div>
+                <div class="outer-card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">For Teachers</h5>
+                        <p class="card-text">
+                            Access your teaching schedule, manage classroom availability, and
+                            more.
+                        </p>
+                        <a
+                            href="{{ url_for('instructor_login') }}"
+                            class="btn btn-success"
+                            >Login as Teacher</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; SIS 2023. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+    ></script>
+</body>
+</html>

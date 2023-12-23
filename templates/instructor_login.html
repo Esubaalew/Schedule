@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="card shadow-lg rounded-lg">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">Instructor Login</h4>
+                    <form action="/instructor_login" method="POST">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Email" name="email" />
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Password" name="password" />
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary rounded-pill">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if error %}
+    <div class="row mt-3">
+        <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
+            <div class="alert alert-danger">{{ error }}</div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

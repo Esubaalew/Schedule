@@ -1,0 +1,7 @@
+Database migrations and schema: add links table and user_id column
+Templates design
+Routes design: account mgmt (sessions) and application logic
+Routes logic
+Flow/ navigation
+Styling 
+Testing

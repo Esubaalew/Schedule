@@ -1,0 +1,59 @@
+{% extends "sidebar.html" %} {% block title %} Schedule {% endblock %} {% block
+content %}
+<div class="content">
+  <header class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <h1>Admin Dashboard</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="border shadow-sm rounded-lg p-2">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Course Code</th>
+            <th>Lec-Period</th>
+            <th>Lec-Instructor</th>
+            <th>Lect-Room</th>
+            <th>Lab-Period</th>
+            <th>Lab-Room</th>
+            <th>Lab-Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for schedule in schedules %}
+          <tr>
+            <td>{{ schedule.course.title }}</td>
+            <td>{{ schedule.course.code }}</td>
+            {% if schedule.type == 'lecture' %}
+            <td>
+              {{ days_mapping[schedule.day] }}, {{ schedule.start_period }} - {{
+              schedule.end_period }}
+            </td>
+            <td>{{ schedule.instructor.name }}</td>
+            <td>{{ schedule.classroom_id }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            {% elif schedule.type == 'lab' %}
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              {{ days_mapping[schedule.day] }}, {{ schedule.start_period }} , {{
+              schedule.end_period }}
+            </td>
+            <td>{{ schedule.classroom_id }}</td>
+            <td>{{ schedule.instructor.name }}</td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock %}
+</div>

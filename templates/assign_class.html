@@ -1,0 +1,62 @@
+{% extends "sidebar.html" %}
+
+{% block title %} Assign Class {% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <!-- Getting Started Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card rounded shadow">
+                <div class="card-body">
+                    <div class="card rounded shadow">
+                        <div class="card-body">
+                            <h4 class="mb-3">Hint</h4>
+                            <p>
+                                The table shows all available sections of the school. Choose one of them to begin making a schedule for each section.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assign Class Title Card -->
+        <div class="col-md-8">
+            <div class="card rounded shadow-lg mb-4">
+                <div class="card-body">
+                    <h1 class="mb-0">Assign Class</h1>
+                </div>
+            </div>
+
+            <!-- Sections List Card -->
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="mb-3">Sections List</h4>
+                    <p class="text-center mb-3">Click on a row to assign a schedule to the section</p>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered text-center">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Year</th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for section in sections %}
+                                <tr onclick="window.location.href='/section/{{ section.id }}';" style="cursor: pointer;">
+                                    <td>{{ section.id }}</td>
+                                    <td>{{ section.year }}</td>
+                                    <td>{{ section.name }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

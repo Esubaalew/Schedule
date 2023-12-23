@@ -1,0 +1,82 @@
+{% extends "sidebar.html" %}
+
+{% block title %} Classroom {% endblock %}
+
+{% block content %}
+<script>
+  function validateDuration() {
+    var startPeriod = parseInt(document.getElementById("start_period").value);
+    var endPeriod = parseInt(document.getElementById("end_period").value);
+
+    if (endPeriod - startPeriod > 2) {
+      alert("Duration cannot be more than 2 periods.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
+<div class="container mt-4">
+  <div class="row">
+    <!-- Getting Started Card -->
+    <div class="col-md-4 mb-4">
+      <div class="card rounded shadow">
+        <div class="card-body">
+          <h4 class="mb-3">Getting Started</h4>
+          <p>
+            The table below shows the availability of classrooms. Green cells represent availability, and red cells represent unavailability.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Classroom Timetable Card -->
+    <div class="col-md-8">
+      <div class="card rounded shadow">
+        <div class="card-body">
+          <p>Available - 1</p>
+          <p>Not Available - 0</p>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th></th>
+                {% for classroom in classrooms %}
+                <th>{{ classroom.name }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for period in range(1, 9) %}
+              <tr>
+                <th scope="row">Period {{ period }}</th>
+                {% for day in range(1, 6) %}
+                  {% for classroom in classrooms %}
+                    {% set availability = availability_data.get(classroom.id, {}).get(day, {}).get(period) %}
+                    <td
+                      {%
+                      if
+                      availability
+                      %}class="bg-success"
+                      {%
+                      else
+                      %}class="bg-danger"
+                      {%
+                      endif
+                      %}
+                    >
+                      {% if availability is defined %} {% if availability %}1{% else %}0{% endif %} {% else %} N/A {% endif %}
+                    </td>
+                  {% endfor %}
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

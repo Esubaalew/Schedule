@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block
+    script%}
+    
+    <!-- list of scetions with links to section page -->
+    <script>
+      function redirectToSection(oppId) {
+        window.location.href = "/view/" + oppId;
+      }
+    </script>
+    {% endblock %} {% block content %}
+    <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Title</th>
+            <th>Organization Name</th>
+            <th>Deadline</th>
+            <th>Category</th>
+            <th>Link</th>
+            <!-- <th>Edit</th>
+            <th>Delete</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- on click individual item route (/<>) -->
+          {% for opp in opps %}
+          <tr>
+            <td class="clickable" onclick="redirectToOpportunity('{{ opp.id }}')">
+              {{opp.status}}
+            </td>
+            <td class="clickable" onclick="redirectToOpportunity('{{ opp.id }}')">
+              {{opp.title}}
+            </td>
+            <td class="clickable" onclick="redirectToOpportunity('{{ opp.id }}')">
+              {{opp.org_name}}
+            </td>
+            <td class="clickable" onclick="redirectToOpportunity('{{ opp.id }}')">
+              {{opp.app_deadline}}
+            </td>
+            <td class="clickable" onclick="redirectToOpportunity('{{ opp.id }}')">
+              {{opp.category}}
+            </td>
+            <td><a href="{{opp.link}}" target="_blank">Link</a></td>
+            <!-- <td>Edit</td>
+            <td>Delete</td> -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endblock %}
+    

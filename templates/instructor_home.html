@@ -1,0 +1,56 @@
+<!-- instructor_home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Home</title>
+    <!-- Link Bootstrap CSS (you may need to adjust the path based on your project structure) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Welcome, Instructor {{ id }}!</h1>
+
+        <div class="card">
+            <div class="card-header">
+                Assigned Courses
+            </div>
+            <ul class="list-group list-group-flush">
+                <!-- Dummy Data Start -->
+                <li class="list-group-item">
+                    <h5 class="card-title">Introduction to Python</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Monday - 1 to 3 (lecture)
+                        </li>
+                        <li class="list-group-item">
+                            Wednesday - 2 to 4 (lab)
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    <h5 class="card-title">Web Development Basics</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Tuesday - 4 to 6 (lecture)
+                        </li>
+                        <li class="list-group-item">
+                            Thursday - 5 to 7 (lab)
+                        </li>
+                    </ul>
+                </li>
+                <!-- Dummy Data End -->
+            </ul>
+        </div>
+
+        <!-- Add any other relevant information or links here -->
+
+    </div>
+
+    <!-- Link Bootstrap JS and Popper.js (you may need to adjust the paths based on your project structure) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
